@@ -15,7 +15,7 @@
 	</header>
 
 	<div>
-		@include('/auth/contenidoLogin')
+		@include('/usuario/contenidoLogin')
 	</div>
 
 	<footer>
