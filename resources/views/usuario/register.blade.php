@@ -15,7 +15,10 @@
 	</header>
 
 	<div>
-		@include('/usuario/contenidoRegister')
+	<form action="{{ url('/usuario') }}" method="post" enctype="multipart/form-data" class="row">
+	@include('usuario.formulario')
+	</form>
+		
 	</div>
 
 	<footer>

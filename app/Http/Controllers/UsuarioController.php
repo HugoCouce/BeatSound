@@ -15,7 +15,8 @@ class UsuarioController extends Controller
     public function index()
     {
         //Lo usaremos para mostrar la información de todos los usuarios
-
+        $datos['usuarios'] = Usuario::paginate(5);
+        return view('usuario.index', $datos);
     }
 
     /**
@@ -66,9 +67,12 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuario $usuario)
+    public function edit($usuario_dni)
     {
-        //
+        //Buscamos el usuario con el dni y si no existe salta una excepción
+        $usuario = Usuario::findOrFail($usuario_dni);
+        //Con compact pasamos varios parámetros a la vez a la vista
+        return view('usuario.edit', compact('usuario'));
     }
 
     /**
@@ -78,9 +82,16 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, $usuario_dni)
     {
-        //
+        //Ahora además de eliminar la información del token, lo hacemos también con la del method.
+        //Solo necesitamos los datos que contenga nuestra tabla
+        $datosUsuario = request()->except('_token', '_method');
+        Usuario::where('usuario_dni', '=', $usuario_dni)->update($datosUsuario);
+
+        //Volvemos a la vista de edición
+        $usuario = Usuario::findOrFail($usuario_dni);
+        return view('usuario.edit', compact('usuario'));
     }
 
     /**
@@ -89,8 +100,10 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usuario $usuario)
+    public function destroy($usuario_dni)
     {
         //
+        Usuario::destroy($usuario_dni);
+        return redirect('usuario');
     }
 }
