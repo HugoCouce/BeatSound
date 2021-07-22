@@ -15,10 +15,10 @@
 	</header>
 
 	<div>
-	<form action="{{ url('/usuario') }}" method="post" enctype="multipart/form-data" class="row">
-	@include('usuario.formulario')
-	</form>
-		
+		<form action="{{ url('/usuario') }}" method="post" enctype="multipart/form-data" class="row">
+			@include('usuario.formulario', ['modo'=>'Crear'])
+		</form>
+
 	</div>
 
 	<footer>
