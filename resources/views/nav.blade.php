@@ -10,10 +10,10 @@
 				<a class="nav-link" href="/">Inicio</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/usuario/login">Acceso usuarios</a>
+				<a class="nav-link" href="{{ url('usuario/login') }}">Acceso usuarios</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/usuario/create">Registro</a>
+				<a class="nav-link" href="{{ url('usuario/create') }}">Registro</a>
 			</li>
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

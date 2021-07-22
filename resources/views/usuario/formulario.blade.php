@@ -3,6 +3,7 @@
     @csrf
 
     <div class="col-md-6 mx-auto">
+        <h1>{{$modo}} usuario</h1>
         <div class="form-group">
             <label for="inputDNI">DNI</label>
             <input type="text" name="usuario_dni" value="{{ isset($usuario->usuario_dni)?$usuario->usuario_dni:'' }}" class="form-control" id="inputDNI" placeholder="DNI">
@@ -36,6 +37,6 @@
             <input id="inputPermisos" name="administrador" value="{{ isset($usuario->administrador)?$usuario->administrador:'0' }}" id="inputFechaNacimiento" type="hidden" value="0">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Crear usuario</button><br><br>
+            <button type="submit" class="btn btn-primary">{{$modo}} usuario</button><br><br>
         </div>
     </div>

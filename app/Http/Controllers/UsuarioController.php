@@ -28,7 +28,7 @@ class UsuarioController extends Controller
     {
         /* Desde el archivo web.php vamos a enrutar casi todos los métodos con una vista. Así el método create nos llevará a la url
         /usuario/create*/
-        return view('usuario.register');
+        return view('usuario.create');
     }
 
     /**
@@ -47,7 +47,9 @@ class UsuarioController extends Controller
         /* Inserción en la BD */
         Usuario::insert($datosUsuario);
 
-        return response()->json($datosUsuario);
+        /* Al principio devolvíamos un json para visualizar que los datos se enviaban a la BD */
+        /* return response()->json($datosUsuario); */
+        return redirect('usuario')->with('mensaje', 'Usuario creado correctamente');
     }
 
     /**
@@ -104,6 +106,6 @@ class UsuarioController extends Controller
     {
         //
         Usuario::destroy($usuario_dni);
-        return redirect('usuario');
+        return redirect('usuario')->with('mensaje', 'Usuario borrado correctamente');        
     }
 }

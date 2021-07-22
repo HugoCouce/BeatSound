@@ -18,7 +18,7 @@
         @csrf
         <!-- Cambiamos el método para que funcione el update de los datos -->
         {{ method_field('PATCH') }}
-        @include('usuario.formulario')
+        @include('usuario.formulario', ['modo'=>'Editar'])
     </form>
 
     <footer>
