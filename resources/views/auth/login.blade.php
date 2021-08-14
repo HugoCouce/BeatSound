@@ -1,4 +1,8 @@
-@extends('layouts.app')
+<head>
+    <title>BeatSound - Acceso</title>
+    <link rel="icon" href="{{URL::asset('/images/BeatSoundLogoSimple.png')}}" type="image/icon type">
+    @extends('layouts.app')
+</head>
 
 @section('content')
 <div class="container">
