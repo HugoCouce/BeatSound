@@ -11,7 +11,7 @@
 <body>
 
     <header>
-        @include('nav')
+        @include('layouts/app')
     </header>
 
     <!-- Si recepcionamos el mensaje del controlador, lo mostramos en pantalla. -->
@@ -29,8 +29,8 @@
                     <th>Apellidos</th>
                     <th>Dirección</th>
                     <th>Correo electrónico</th>
+                    <th>Contraseña encriptada</th>
                     <th>Contraseña</th>
-                    <th>ContraseñaR</th>
                     <th>Fecha de nacimiento</th>
                     <th>Administrador</th>
                     <th>Acciones</th>

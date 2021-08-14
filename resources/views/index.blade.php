@@ -11,7 +11,7 @@
 <body>
 
 	<header>
-		@include('nav')
+		@include('layouts/app')
 	</header>
 
 	<div>

@@ -26,3 +26,7 @@ Route::get('/user/login', function () {
 /* Route::get('/user/register', [UserController::class, 'create']); */
 /* Aquí especificamos todas las rutas que tiene el controlador */
 Route::resource('user', UserController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
