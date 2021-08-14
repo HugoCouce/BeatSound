@@ -30,6 +30,7 @@
                     <th>Dirección</th>
                     <th>Correo electrónico</th>
                     <th>Contraseña</th>
+                    <th>ContraseñaR</th>
                     <th>Fecha de nacimiento</th>
                     <th>Administrador</th>
                     <th>Acciones</th>
@@ -37,22 +38,23 @@
             </thead>
 
             <tbody>
-                @foreach( $usuarios as $usuario)
+                @foreach( $users as $user)
                 <tr>
-                    <td>{{$usuario->usuario_dni}}</td>
-                    <td>{{$usuario->nombre}}</td>
-                    <td>{{$usuario->apellidos}}</td>
-                    <td>{{$usuario->direccion}}</td>
-                    <td>{{$usuario->email}}</td>
-                    <td>{{$usuario->contraseña}}</td>
-                    <td>{{$usuario->fecha_nacimiento}}</td>
-                    <td>{{$usuario->administrador}}</td>
+                    <td>{{$user->user_dni}}</td>
+                    <td>{{$user->nombre}}</td>
+                    <td>{{$user->apellidos}}</td>
+                    <td>{{$user->direccion}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->password}}</td>
+                    <td>{{$user->password_confirmation}}</td>
+                    <td>{{$user->fecha_nacimiento}}</td>
+                    <td>{{$user->administrador}}</td>
                     <td>
-                        <a class="btn btn-success" href="{{ url('/usuario/'.$usuario->usuario_dni.'/edit') }}" role="button">
+                        <a class="btn btn-success" href="{{ url('/user/'.$user->user_dni.'/edit') }}" role="button">
                             Editar
                         </a>
 
-                        <form action="{{ url('/usuario/'.$usuario->usuario_dni) }}" method="post">
+                        <form action="{{ url('/user/'.$user->user_dni) }}" method="post">
                             <!-- Añadimos el token de seguridad para recepcionar los datos -->
                             @csrf
                             <!-- Tenemos que cambiar el método post a delete para que se pueda borrar el registro -->

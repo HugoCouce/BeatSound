@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +18,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/usuario/login', function () {
-    return view('/usuario/login');
+Route::get('/user/login', function () {
+    return view('/user/login');
 });
 
-/* Especificamos solo una ruta del controlador de usuarios*/
-/* Route::get('/usuario/register', [UsuarioController::class, 'create']); */
+/* Especificamos solo una ruta del controlador de users*/
+/* Route::get('/user/register', [UserController::class, 'create']); */
 /* Aquí especificamos todas las rutas que tiene el controlador */
-Route::resource('usuario', UsuarioController::class);
+Route::resource('user', UserController::class);

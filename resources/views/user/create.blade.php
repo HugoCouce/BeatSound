@@ -4,7 +4,7 @@
 
 <head>
 	@include('head')
-	<title>BeatSound - Acceso</title>
+	<title>BeatSound - Registro</title>
 	<link rel="icon" href="{{URL::asset('/images/BeatSoundLogoSimple.png')}}" type="image/icon type">
 </head>
 
@@ -15,7 +15,10 @@
 	</header>
 
 	<div>
-		@include('/usuario/contenidoLogin')
+		<form action="{{ url('/user') }}" method="post" enctype="multipart/form-data" class="row">
+			@include('user.formulario', ['modo'=>'Crear'])
+		</form>
+
 	</div>
 
 	<footer>

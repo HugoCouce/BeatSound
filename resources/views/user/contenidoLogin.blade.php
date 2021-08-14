@@ -9,10 +9,7 @@
 				<input type="password" class="form-control" id="inputContrasenha" aria-describedby="advertenciaContrasenha" placeholder="**********">
 				<small id="advertenciaContrasenha" class="form-text text-muted">Nunca compartas la constraseña con nadie</small>
 			</div>
-			<!-- 			<div class="form-check">
-				<input type="checkbox" class="form-check-input" id="exampleCheck1">
-				<label class="form-check-label" for="exampleCheck1">Check me out</label>
-			</div> -->
+
 			<button type="submit" class="btn btn-primary">Confirmar</button><br><br>
 		</div>
 	</form>

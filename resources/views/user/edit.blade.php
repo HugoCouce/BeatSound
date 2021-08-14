@@ -14,11 +14,11 @@
         @include('nav')
     </header>
 
-    <form action="{{ url('/usuario/'.$usuario->usuario_dni) }}" method="post">
+    <form action="{{ url('/user/'.$user->user_dni) }}" method="post">
         @csrf
         <!-- Cambiamos el método para que funcione el update de los datos -->
         {{ method_field('PATCH') }}
-        @include('usuario.formulario', ['modo'=>'Editar'])
+        @include('user.formulario', ['modo'=>'Editar'])
     </form>
 
     <footer>

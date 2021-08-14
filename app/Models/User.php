@@ -2,42 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use HasFactory, Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    /* Especificamos el nombre de la tabla */
+    protected $table = 'users';
+    /* Especificamos el nombre de la PK */
+    protected $primaryKey = 'user_dni';
+    /* Especificamos que la PK no tiene un valor auto incremental*/
+    public $incrementing = false;
+    /* Especificamos que la PK es del tipo string*/
+    protected $keyType = 'string';
+    /* Especificamos que no hay campos timestamp para registrar las entradas*/
+    public $timestamps = false;
 }
