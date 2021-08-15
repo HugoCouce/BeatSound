@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Auth\Authenticatable;
+/* Necesitamos implementar la clase Autenticatable para que nuestro modelo tenga los métodos necesarios para el login */
 
-class User extends Model
+class User extends Model implements AuthenticatableContract
 {
+    use Authenticatable;
     /* Especificamos el nombre de la tabla */
     protected $table = 'users';
     /* Especificamos el nombre de la PK */

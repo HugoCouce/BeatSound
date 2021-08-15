@@ -43,13 +43,16 @@ class UserController extends Controller
         La variable recogerá todos los datos del request (menos el token de seguridad) y lo devolverá en un archivo .json.
         Si los necesitáramos todos solo habría que hacer ->all() */
         $datosUser = request()->except('_token');
+        /* Necesitamos encriptar la contraseña por que laravel las encripta por defecto en el login y
+        al hacer la comparación de estas, si no está encriptada, no coinciden */
+        $datosUser['password'] = bcrypt($datosUser['password']);
 
         /* Inserción en la BD */
         User::insert($datosUser);
 
         /* Al principio devolvíamos un json para visualizar que los datos se enviaban a la BD */
         /* return response()->json($datosUsuario); */
-        return redirect('user')->with('mensaje', 'Usuario creado correctamente');
+        return view('index');
     }
 
     /**
@@ -106,6 +109,6 @@ class UserController extends Controller
     {
         //
         User::destroy($user_dni);
-        return redirect('user')->with('mensaje', 'Usuario borrado correctamente');
+        return view('index');
     }
 }

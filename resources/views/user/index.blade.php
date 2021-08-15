@@ -5,10 +5,6 @@
 </head>
 
 @section('content')
-<!-- Si recepcionamos el mensaje del controlador, lo mostramos en pantalla. -->
-@if(Session::has('mensaje'))
-{{ Session::get('mensaje') }}
-@endif
 
 <div>
     <div class="">
