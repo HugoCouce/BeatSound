@@ -58,7 +58,15 @@
                                 <input id="inputPermisos" name="administrador" value="{{ isset($user->administrador)?$user->administrador:'0' }}" id="inputFechaNacimiento" type="hidden" value="0">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Editar usuario</button><br><br>
+                                <button type="submit" class="btn btn-primary">Editar usuario</button>
+                                <form action="{{ url('/user/'.$user->user_dni) }}" method="post">
+                                    <!-- Añadimos el token de seguridad para recepcionar los datos -->
+                                    @csrf
+                                    <!-- Enviamos la información al método DELETE, el cual está asignado al método destroy del modelo -->
+                                    {{ method_field('DELETE') }}
+                                    <button type="submit" onclick="return confirm('¿Estás seguro de querer eliminar la cuenta?')" class="btn btn-danger">Eliminar cuenta</button>
+                                </form>
+                                <br><br>
                             </div>
                         </div>
                     </form>

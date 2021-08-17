@@ -65,10 +65,18 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+
+                            @if (Auth::user()->administrador==1)
+                            <a class="dropdown-item" href="{{ url('/user') }}">
+                                {{ __('Editar cuentas') }}
+                            </a>
+                            
+                            @else
                             <a class="dropdown-item" href="{{ url('/user/'.Auth::user()->user_dni.'/edit') }}">
                                 {{ __('Editar datos') }}
                             </a>
-
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Cerrar sesión') }}

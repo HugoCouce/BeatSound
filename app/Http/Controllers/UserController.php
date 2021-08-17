@@ -28,7 +28,7 @@ class UserController extends Controller
     {
         /* Desde el archivo web.php vamos a enrutar casi todos los métodos con una vista. Así el método create nos llevará a la url
         /usuario/create*/
-        return view('user.create');
+        return view('index');
     }
 
     /**
