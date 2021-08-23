@@ -14,11 +14,22 @@
                 <div class="card-body">
                     <form method="POST" action="{{ url('/user') }}">
                         @csrf
+                        @if(count($errors)>0)
+                        <div class="alert alert-danger" role="alert">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                <li>
+                                    {{ $error }}
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
                         <div class="form-group row">
                             <label for="inputDNI" class="col-md-4 col-form-label text-md-right">{{ __('DNI') }}</label>
 
                             <div class="col-md-6">
-                                <input type="text" name="user_dni" value="{{ isset($user->user_dni)?$user->user_dni:'' }}" class="form-control" id="inputDNI" placeholder="DNI" required autocomplete="user_dni" autofocus>
+                                <input type="text" name="user_dni" value="{{ isset($user->user_dni)?$user->user_dni:'' }}" class="form-control" id="inputDNI" placeholder="DNI"  autocomplete="user_dni" autofocus>
                             </div>
                         </div>
 
@@ -26,7 +37,7 @@
                             <label for="inputNombre" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
-                                <input type="text" name="nombre" value="{{ isset($user->nombre)?$user->nombre:'' }}" class="form-control" id="inputNombre" placeholder="Nombre" required autocomplete="nombre">
+                                <input type="text" name="nombre" value="{{ isset($user->nombre)?$user->nombre:'' }}" class="form-control" id="inputNombre" placeholder="Nombre"  autocomplete="nombre">
                             </div>
                         </div>
 
@@ -50,7 +61,7 @@
                             <label for="inputEmail" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
-                                <input type="email" name="email" value="{{ isset($user->email)?$user->email:'' }}" class="form-control" id="inputEmail" placeholder="ejemplo@email.com">
+                                <input type="text" name="email" value="{{ isset($user->email)?$user->email:'' }}" class="form-control" id="inputEmail" placeholder="ejemplo@email.com">
                             </div>
                         </div>
 

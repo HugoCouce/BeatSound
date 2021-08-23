@@ -40,7 +40,36 @@ class UserController extends Controller
     public function store(Request $request)
     {
         /* Este método almacenará los datos recibidos por el formulario.
-        La variable recogerá todos los datos del request (menos el token de seguridad) y lo devolverá en un archivo .json.
+        Creamos un array que almacene todos los datos y los valide*/
+        $campos = [
+            'user_dni' => 'required|unique:users,user_dni|regex:/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i|string|size:9',
+            'nombre' => 'required|string|max:35',
+            'apellidos' => 'required|string|max:75',
+            'direccion' => 'required|string|max:250',
+            'email' => 'required|unique:users,email|email',
+            'password' => 'required|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/|string|min:6|max:50',
+            'password_confirmation' => 'required|string|same:password',
+            'fecha_nacimiento' => 'required'
+        ];
+
+        /* Ahora, cambiamos el mensaje dependiendo que falle en la validación.
+        :attribute es un comodín que será sustituido por el nombre de la variable en el array */
+        $mensaje = [
+            'required' => 'El campo :attribute es obligatorio',
+            'unique' => 'El campo :attribute ya se encuentra registrado en nuestra web',
+            'email' => 'El campo email no está bien escrito',
+            'size' => 'El campo :attribute debe tener :size caracteres',
+            'min' => 'El campo :attribute debe tener como mínimo :min caracteres',
+            'same' => 'Las dos contraseñas deben coincidir',
+            'regex' => 'El campo :attribute está mal escrito.
+            Recuerda que las contraseñas deben tener 6 carecteres, una letra mayúsculas, una minúsculas y un número.
+            Los DNI deben tener 8 números y acabar en una letra mayúscula'
+        ];
+
+        $this->validate($request, $campos, $mensaje);
+
+
+        /*La variable recogerá todos los datos del request (menos el token de seguridad) y lo devolverá en un archivo .json.
         Si los necesitáramos todos solo habría que hacer ->all() */
         $datosUser = request()->except('_token');
         /* Necesitamos encriptar la contraseña por que laravel las encripta por defecto en el login y

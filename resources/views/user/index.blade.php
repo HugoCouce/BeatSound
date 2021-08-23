@@ -41,18 +41,19 @@
                                 <td>{{$user->fecha_nacimiento}}</td>
                                 <td>{{$user->administrador}}</td>
                                 <td>
-                                    <a class="btn btn-success" href="{{ url('/user/'.$user->user_dni.'/edit') }}" role="button">
-                                        Editar
-                                    </a>
+                                    <div class="btn-group d-flex" role="group">
+                                        <a class="btn btn-link" href="{{ url('/user/'.$user->user_dni.'/edit') }}" role="button">
+                                            Editar
+                                        </a>
 
-                                    <form action="{{ url('/user/'.$user->user_dni) }}" method="post">
-                                        <!-- Añadimos el token de seguridad para recepcionar los datos -->
-                                        @csrf
-                                        <!-- Tenemos que cambiar el método post a delete para que se pueda borrar el registro -->
-                                        {{ method_field('DELETE') }}
-                                        <button type="submit" onclick="return confirm('¿Estás seguro de querer borrar el usuario?')" class="btn btn-danger">Borrar</button>
-                                    </form>
-
+                                        <form action="{{ url('/user/'.$user->user_dni) }}" method="post">
+                                            <!-- Añadimos el token de seguridad para recepcionar los datos -->
+                                            @csrf
+                                            <!-- Tenemos que cambiar el método post a delete para que se pueda borrar el registro -->
+                                            {{ method_field('DELETE') }}
+                                            <button type="submit" onclick="return confirm('¿Estás seguro de querer borrar el usuario?')" class="btn btn-danger">Borrar</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach

@@ -150,7 +150,11 @@ return [
     | of "email". This simply helps us make our message more expressive.
     |
     */
-
-    'attributes' => [],
+    /* Cambiamos el nombre del campo user_dni para que el mensaje de error sea más legible */
+    'attributes' => [
+        'user_dni' => 'DNI',
+        'password' => 'contraseña',
+        'password_confirmation' => 'confirmación de contraseña'
+    ],
 
 ];
