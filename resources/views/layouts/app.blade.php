@@ -38,8 +38,9 @@
                             Productos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">CD</a>
-                            <a class="dropdown-item" href="#">Vinilo</a>
+                            <a class="dropdown-item" href="#">Todos los productos</a>
+                            <a class="dropdown-item" href="#">Vinilos</a>
+                            <a class="dropdown-item" href="#">CD´s</a>
                         </div>
                     </li>
                 </ul>
@@ -71,7 +72,7 @@
                             <a class="dropdown-item" href="{{ url('/user') }}">
                                 {{ __('Editar cuentas') }}
                             </a>
-                            
+
                             @else
                             <a class="dropdown-item" href="{{ url('/user/'.Auth::user()->user_dni.'/edit') }}">
                                 {{ __('Editar datos') }}

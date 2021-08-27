@@ -17,7 +17,7 @@
                         <!-- Cambiamos el método para que funcione el update de los datos -->
                         {{ method_field('PATCH') }}
                         <!-- Debemos utilizar un token de seguridad para que Laravel sepa que la información
-    del formulario viene del propio sistema. Si no, el controlador no recogerá los datos enviados -->
+                        del formulario viene del propio sistema. Si no, el controlador no recogerá los datos enviados -->
                         @csrf
 
                         <div class="col-md-6 mx-auto">
@@ -58,17 +58,20 @@
                                 <input id="inputPermisos" name="administrador" value="{{ isset($user->administrador)?$user->administrador:'0' }}" id="inputFechaNacimiento" type="hidden" value="0">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Editar usuario</button>
-                                <form action="{{ url('/user/'.$user->user_dni) }}" method="post">
-                                    <!-- Añadimos el token de seguridad para recepcionar los datos -->
-                                    @csrf
-                                    <!-- Enviamos la información al método DELETE, el cual está asignado al método destroy del modelo -->
-                                    {{ method_field('DELETE') }}
-                                    <button type="submit" onclick="return confirm('¿Estás seguro de querer eliminar la cuenta?')" class="btn btn-danger">Eliminar cuenta</button>
-                                </form>
-                                <br><br>
+                                <button type="submit" class="btn btn-primary">Guardar cambios</button>
                             </div>
                         </div>
+                    </form>
+                </div>
+
+                <div class="card-footer d-flex align-items-center justify-content-center">
+                    <form action=" {{ url('/user/'.$user->user_dni) }}" method="post" style="display: inline-block;">
+                    <p>{{ __('¿Deseas eliminar tu cuenta?') }}</p>
+                        <!-- Añadimos el token de seguridad para recepcionar los datos -->
+                        @csrf
+                        <!-- Tenemos que cambiar el método a delete para que se pueda borrar el registro -->
+                        {{ method_field('DELETE') }}
+                        <button type="submit" onclick="return confirm('¿Estás totalmente seguro de querer eliminar tu cuenta?')" class="btn btn-sm btn-danger">Eliminar mi cuenta</button>
                     </form>
                 </div>
             </div>

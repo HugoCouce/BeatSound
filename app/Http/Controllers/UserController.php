@@ -53,7 +53,8 @@ class UserController extends Controller
         ];
 
         /* Ahora, cambiamos el mensaje dependiendo que falle en la validación.
-        :attribute es un comodín que será sustituido por el nombre de la variable en el array */
+        :attribute es un comodín que será sustituido por el nombre de la variable en el array
+        y para especificar algún valor concreto usamos su nombre, por ejemplo :size*/
         $mensaje = [
             'required' => 'El campo :attribute es obligatorio',
             'unique' => 'El campo :attribute ya se encuentra registrado en nuestra web',
