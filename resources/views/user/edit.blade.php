@@ -11,6 +11,13 @@
             <div class="card">
                 <div class="card-header">{{ __('Editar') }}</div>
 
+                @if(Session::has('mensaje'))
+                <div class="alert alert-success" role="alert">
+                    {{ Session::get('mensaje') }}
+                </div>
+                @endif
+
+
                 <div class="card-body">
                     <form action="{{ url('/user/'.$user->user_dni) }}" method="post">
                         @csrf
@@ -66,7 +73,7 @@
 
                 <div class="card-footer d-flex align-items-center justify-content-center">
                     <form action=" {{ url('/user/'.$user->user_dni) }}" method="post" style="display: inline-block;">
-                    <p>{{ __('¿Deseas eliminar tu cuenta?') }}</p>
+                        <p>{{ __('¿Deseas eliminar tu cuenta?') }}</p>
                         <!-- Añadimos el token de seguridad para recepcionar los datos -->
                         @csrf
                         <!-- Tenemos que cambiar el método a delete para que se pueda borrar el registro -->

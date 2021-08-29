@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -21,6 +22,9 @@ Route::get('/', function () {
 
 /* Aquí especificamos todas las rutas que tiene el controlador User */
 Route::resource('user', UserController::class);
+
+/* Aquí especificamos todas las rutas que tiene el controlador Product */
+Route::resource('product', ProductController::class);
 
 /* Especificamos las rutas de autenticación. Están en sus correspondientes controladores */
 Auth::routes();

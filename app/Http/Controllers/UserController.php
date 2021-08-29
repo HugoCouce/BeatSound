@@ -126,7 +126,7 @@ class UserController extends Controller
 
         //Volvemos a la vista de edición
         $user = User::findOrFail($user_dni);
-        return view('user.edit', compact('user'));
+        return redirect()->back()->with('mensaje', 'Datos actualizados correctamente');
     }
 
     /**
