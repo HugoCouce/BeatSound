@@ -16,7 +16,7 @@
                             Registrar nuevo producto
                         </a>
                     </div>
-                    <table class="card-table table table-light">
+                    <table class="card-table table table-light text-center">
                         <thead class="thead-light">
                             <tr>
                                 <th>Miniatura</th>
@@ -35,7 +35,7 @@
                             @foreach( $products as $product)
                             <tr>
                                 <td>
-                                    <img src="{{ asset('storage').'/'.$product->miniatura }}" alt="">
+                                    <img src="{{ asset('storage').'/'.$product->miniatura }}" alt="" width="150" height="150">
                                 </td>
                                 <td>{{ $product->producto_id }}</td>
                                 <td>{{ $product->nombre_artista }}</td>
@@ -63,6 +63,10 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <!-- Paginacion -->
+                    <div class="d-flex text-center justify-content-center">
+                        {!! $products->links() !!}
+                    </div>
                 </div>
             </div>
         </div>

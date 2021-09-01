@@ -38,9 +38,9 @@
                             Productos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Todos los productos</a>
-                            <a class="dropdown-item" href="#">Vinilos</a>
-                            <a class="dropdown-item" href="#">CD´s</a>
+                            <a class="dropdown-item" href="{{ url('/product/buy') }}">Todos los productos</a>
+                            <a class="dropdown-item" href="{{ url('/product/buy/vinyl') }}">Vinilos</a>
+                            <a class="dropdown-item" href="{{ url('/product/buy/cd') }}">CD´s</a>
                         </div>
                     </li>
                 </ul>

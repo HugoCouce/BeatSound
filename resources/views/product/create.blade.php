@@ -74,13 +74,14 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="inputFormato" class="col-md-4 col-form-label text-md-right">{{ __('Formato') }}</label>
-
+                            <label for="inputFormato" class="col-md-4 col-form-label text-md-right">Formato</label>
                             <div class="col-md-6">
-                                <input type="text" name="formato" value="{{ isset($product->formato)?$product->formato:'' }}" class="form-control" id="inputFormato" placeholder="CD/Vinilo" autocomplete="formato">
+                                <select id="inputFormato" name="formato">
+                                    <option value="Vinilo">Vinilo</option>
+                                    <option value="CD">CD</option>
+                                </select>
                             </div>
                         </div>
-
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
