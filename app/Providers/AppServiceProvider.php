@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        /* Para que la paginación funciona correctamente debemos especificar que usamos bootstrap */
         Paginator::useBootstrap();
     }
 }

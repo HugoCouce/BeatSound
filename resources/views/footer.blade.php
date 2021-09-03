@@ -35,22 +35,6 @@
                     </h6>
                     <p>
                         Tu web de confianza para comprar música en formato físico.<br>
-                        Siempre al mejor precio posible.
-                    </p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        <i class="fas fa-shopping-cart"></i> Productos
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Discos</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Vinilos</a>
                     </p>
                 </div>
                 <!-- Grid column -->

@@ -40,25 +40,36 @@
 	</div>
 </header><br><br>
 
+<hr width="80%"><br><br>
+
 <!-- Three columns of text below the carousel -->
 <div class="row d-flex align-items-center justify-content-center">
-	<div class="col-lg-4">
-		<img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-		<h2>Vinilos</h2>
-		<p>Donec sed odio dui. Etiam porta sem malesuada magna
-			mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
-			Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent
-			commodo cursus magna.</p>
-		<p><a class="btn btn-secondary" href="#" role="button">Mostrar productos »</a></p>
+	<div class="col-lg-3 ">
+		<img class="rounded-circle mx-auto d-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"><br>
+		<h2>Todos los productos</h2>
+		<p>Duis mollis, est non commodo luctus, nisi erat porttitor
+			ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
+			sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
+			mauris condimentum nibh.</p>
+		<p><a class="btn btn-secondary" href="{{ url('/product/buy') }}" role="button">Mostrar »</a></p>
 	</div><!-- /.col-lg-4 -->
-	<div class="col-lg-4">
-		<img class="" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+	<div class="col-lg-3">
+		<img class="rounded-circle mx-auto d-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"><br>
+		<h2>Vinilos</h2>
+		<p>Duis mollis, est non commodo luctus, nisi erat porttitor
+			ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
+			sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
+			mauris condimentum nibh.</p>
+		<p><a class="btn btn-secondary" href="{{ url('/product/buy/vinyl') }}" role="button">Mostrar »</a></p>
+	</div><!-- /.col-lg-4 -->
+	<div class="col-lg-3">
+		<img class="rounded-circle mx-auto d-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"><br>
 		<h2>CD´s</h2>
 		<p>Duis mollis, est non commodo luctus, nisi erat porttitor
 			ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
 			sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
 			mauris condimentum nibh.</p>
-		<p><a class="btn btn-secondary" href="#" role="button">Mostrar productos »</a></p>
+		<p><a class="btn btn-secondary" href="{{ url('/product/buy/cd') }}" role="button">Mostrar »</a></p>
 	</div><!-- /.col-lg-4 -->
 </div><!-- /.row -->
 @endsection

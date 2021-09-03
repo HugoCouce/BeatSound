@@ -27,11 +27,12 @@ Route::get('product/buy', [ProductController::class, 'buy']);
 Route::get('product/buy/vinyl', [ProductController::class, 'vinyl']);
 Route::get('product/buy/cd', [ProductController::class, 'cd']);
 
-/* Aquí especificamos todas las rutas que tiene el controlador User */
+/* Aquí especificamos todas las rutas que tiene el controlador User. Añadimos ->middleware('auth') para no permitir el
+acceso a las vistas a no ser que haya un usuario logueado*/
 Route::resource('user', UserController::class);
 
-/* Aquí especificamos todas las rutas que tiene el controlador Product */
-Route::resource('product', ProductController::class);
+/* Aquí especificamos todas las rutas que tiene el controlador Product. */
+Route::resource('product', ProductController::class)->middleware('auth');
 
 /* Especificamos las rutas de autenticación. Están en sus correspondientes controladores */
 Auth::routes();

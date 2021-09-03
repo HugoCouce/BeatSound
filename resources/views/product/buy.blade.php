@@ -20,8 +20,22 @@
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $product->nombre_album }} - {{ $product->año }}</h6>
                                 <p class="card-text">Género: {{ $product->categoria }}</p>
                                 <p class="card-text">Formato: {{ $product->formato }}</p>
-                                <a href="#" class="btn mr-2"><i class="fas fa-link"></i>Comprar</a>
-                                <a href="#" class="btn "><i class="fab fa-github"></i>Página oficial</a>
+                                <div>
+                                    <form action="">
+                                        @csrf
+                                        <label for="cantidad">Cantidad:</label>
+                                        <select name="cantidad" id="cantidad">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <a class="btn btn-link" href="" role="button">
+                                            Comprar
+                                        </a>
+                                    </form>
+                                </div>
                             </div>
                         </div><br><br><br>
                     </div>
