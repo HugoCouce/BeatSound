@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,8 +25,11 @@ Route::get('/', function () {
 /* Especificamos las rutas para las nuevas funciones que vayamos incluyendo en el controlador.
 Deben escribirse antes que las automáticas del propio controlador */
 Route::get('product/buy', [ProductController::class, 'buy']);
+Route::post('product/buy', [ProductController::class, 'buy']);
 Route::get('product/buy/vinyl', [ProductController::class, 'vinyl']);
+Route::post('product/buy/vinyl', [ProductController::class, 'vinyl']);
 Route::get('product/buy/cd', [ProductController::class, 'cd']);
+Route::post('product/buy/cd', [ProductController::class, 'cd']);
 
 /* Aquí especificamos todas las rutas que tiene el controlador User. Añadimos ->middleware('auth') para no permitir el
 acceso a las vistas a no ser que haya un usuario logueado*/
@@ -33,6 +37,10 @@ Route::resource('user', UserController::class);
 
 /* Aquí especificamos todas las rutas que tiene el controlador Product. */
 Route::resource('product', ProductController::class)->middleware('auth');
+
+/* Aquí especificamos todas las rutas que tiene el controlador Order. */
+Route::resource('order', OrderController::class);
+Route::post('order/create', [OrderController::class, 'create']);
 
 /* Especificamos las rutas de autenticación. Están en sus correspondientes controladores */
 Auth::routes();

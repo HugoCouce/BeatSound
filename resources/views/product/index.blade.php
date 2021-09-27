@@ -3,7 +3,9 @@
     <link rel="icon" href="{{URL::asset('/images/BeatSoundLogoSimple.png')}}" type="image/icon type">
     @extends('layouts.app')
 </head>
-
+<?php
+session_start();
+?>
 @section('content')
 
 <div>

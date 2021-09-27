@@ -62,38 +62,51 @@
                         @endif
                         @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->nombre }}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/order/create') }}">Carrito (<?php
+                                                                                            echo (empty($_SESSION['carrito'])) ? 0 : count($_SESSION['carrito']);
+                                                                                            ?>)</a>
+                        </li>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->nombre }}
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+
+                            @if (Auth::user()->administrador==1)
+                            <a class="dropdown-item" href="{{ url('/user') }}">
+                                {{ __('Gestionar cuentas') }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ url('/product') }}">
+                                {{ __('Gestionar productos') }}
+                            </a>
 
+                            <a class="dropdown-item" href="{{ url('/') }}">
+                                {{ __('Gestionar pedidos') }}
+                            </a>
 
-                                @if (Auth::user()->administrador==1)
-                                <a class="dropdown-item" href="{{ url('/user') }}">
-                                    {{ __('Editar cuentas') }}
-                                </a>
-
-                                @else
-                                <a class="dropdown-item" href="{{ url('/user/'.Auth::user()->user_dni.'/edit') }}">
-                                    {{ __('Editar datos') }}
-                                </a>
-                                @endif
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            @else
+                            <a class="dropdown-item" href="{{ url('/user/'.Auth::user()->user_dni.'/edit') }}">
+                                {{ __('Editar datos') }}
+                            </a>
+                            @endif
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Cerrar sesión') }}
-                                </a>
+                                {{ __('Cerrar sesión') }}
+                            </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
                         </li>
                         @endguest
                     </ul>
                 </div>
             </nav>
-        </div>
+        </div><br><br>
 
         <main class="py-4">
             @yield('content')

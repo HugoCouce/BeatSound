@@ -39,6 +39,9 @@
 		</div>
 	</div>
 </header><br><br>
+<?php
+session_start();
+?>
 
 <hr width="80%"><br><br>
 
