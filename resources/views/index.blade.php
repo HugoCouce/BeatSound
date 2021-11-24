@@ -5,25 +5,28 @@
 </head>
 
 @section('content')
-<header class="masthead">
+<header class="masthead"><br><br>
+
 	<div class="">
-		<div class="row align-items-center">
-			<div class="col-12">
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="col-lg-9">
 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
 						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 					</ol>
 					<div class="carousel-inner">
-						<div class="carousel-item active" style="height: 500;">
-							<img class="d-block w-100" src="{{URL::asset('/images/vinylHeader.jpg')}}" alt="First slide">
+						<div class="carousel-item active">
+							<img class="d-block w-100" src="{{URL::asset('/images/carrusel01.jpg')}}" alt="First slide">
+							<div class="carousel-caption">
+								<h3>Pregunta sin miedo. Te conseguimos la música que necesites</h3>
+							</div>
 						</div>
-						<div class="carousel-item" style="height: 500px;">
-							<img class="d-block w-100" src="{{URL::asset('/images/vinylHeader.jpg')}}" alt="Second slide">
-						</div>
-						<div class="carousel-item" style="height: 500px;">
-							<img class="d-block w-100" src="{{URL::asset('/images/vinylHeader.jpg')}}" alt="Third slide">
+						<div class="carousel-item">
+							<img class="d-block w-100" src="{{URL::asset('/images/carrusel02.jpg')}}" alt="Second slide">
+							<div class="carousel-caption">
+								<h3>Disfruta de tu música cuando quieras y como quieras</h3>
+							</div>
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -45,10 +48,40 @@ session_start();
 
 <hr width="80%"><br><br>
 
+<div class="row d-flex align-items-center justify-content-center">
+	<div class="col-lg-3">
+		<h2>Asesores para todo el mundo</h2>
+		<p>No tengas miedo en preguntarnos por nuevos grupos o géneros musicales que vayan contigo.</p>
+		<p>Estamos encantados de ayudarte a descubrir nuevos horizontes para que disfrutes aún más de la música.</p>
+	</div>
+
+	<div class="col-lg-3">
+		<img class="d-block w-100" src="{{URL::asset('/images/asesoramiento.jpg')}}" alt="Asesoramiento personalizado">
+	</div>
+</div><br><br>
+
+<hr width="80%"><br><br>
+
+<div class="row d-flex align-items-center justify-content-center">
+	<div class="col-lg-3">
+		<img class="d-block w-100" src="{{URL::asset('/images/ejemploCliente.jpg')}}" alt="Imagen de un cliente">
+	</div>
+
+	<div class="col-lg-3">
+		<h2>Hacednos llegar vuestras fotos</h2>
+		<p>Muchas gracias a todos por mandarnos las fotos de vuestros pedidos o colección.</p>
+		<p>Es un placer ayudaros y aconsejaros para encontrar la música que tanto os gusta.</p>
+	</div>
+</div><br><br>
+
+<hr width="80%"><br><br>
+
+
+
 <!-- Three columns of text below the carousel -->
 <div class="row d-flex align-items-center justify-content-center">
 	<div class="col-lg-3 ">
-		<img class="rounded-circle mx-auto d-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"><br>
+		<img class="rounded-circle mx-auto d-block" src="{{URL::asset('/images/vinyl.jpg')}}" alt="VinylShortcut" width="140" height="140"><br>
 		<h2>Todos los productos</h2>
 		<p>Duis mollis, est non commodo luctus, nisi erat porttitor
 			ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
@@ -57,7 +90,7 @@ session_start();
 		<p><a class="btn btn-secondary" href="{{ url('/product/buy') }}" role="button">Mostrar »</a></p>
 	</div><!-- /.col-lg-4 -->
 	<div class="col-lg-3">
-		<img class="rounded-circle mx-auto d-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"><br>
+		<img class="rounded-circle mx-auto d-block" src="{{URL::asset('/images/vinyl.jpg')}}" alt="VinylShortcut" width="140" height="140"><br>
 		<h2>Vinilos</h2>
 		<p>Duis mollis, est non commodo luctus, nisi erat porttitor
 			ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
@@ -66,7 +99,7 @@ session_start();
 		<p><a class="btn btn-secondary" href="{{ url('/product/buy/vinyl') }}" role="button">Mostrar »</a></p>
 	</div><!-- /.col-lg-4 -->
 	<div class="col-lg-3">
-		<img class="rounded-circle mx-auto d-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"><br>
+		<img class="rounded-circle mx-auto d-block" src="{{URL::asset('/images/cd.jpg')}}" alt="CdShortcut" width="140" height="140"><br>
 		<h2>CD´s</h2>
 		<p>Duis mollis, est non commodo luctus, nisi erat porttitor
 			ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus

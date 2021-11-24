@@ -1,0 +1,15 @@
+.carousel-item {
+    height: 400px;
+}
+
+.carousel-item img {
+    opacity: 0.7;
+}
+
+.carousel-item h3 h2 {
+    opacity: 1;
+}
+
+nav {
+    border-bottom: 1px solid black;
+}
