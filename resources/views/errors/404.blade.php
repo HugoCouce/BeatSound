@@ -1,5 +1,5 @@
 <head>
-    <title>BeatSound - Registro de pedidos</title>
+    <title>BeatSound - 404 No encontrado</title>
     <link rel="icon" href="{{URL::asset('/images/BeatSoundLogoSimple.png')}}" type="image/icon type">
     @extends('layouts.app')
 </head>

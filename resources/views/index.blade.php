@@ -50,7 +50,7 @@ session_start();
 
 <div class="row d-flex align-items-center justify-content-center">
 	<div class="col-lg-3">
-		<h2>Asesores para todo el mundo</h2>
+		<h2>Estamos aquí para ayudarte</h2>
 		<p>No tengas miedo en preguntarnos por nuevos grupos o géneros musicales que vayan contigo.</p>
 		<p>Estamos encantados de ayudarte a descubrir nuevos horizontes para que disfrutes aún más de la música.</p>
 	</div>
@@ -81,30 +81,21 @@ session_start();
 <!-- Three columns of text below the carousel -->
 <div class="row d-flex align-items-center justify-content-center">
 	<div class="col-lg-3 ">
-		<img class="rounded-circle mx-auto d-block" src="{{URL::asset('/images/vinyl.jpg')}}" alt="VinylShortcut" width="140" height="140"><br>
+		<img class="rounded mx-auto d-block" src="{{URL::asset('/images/vinyl&cd.png')}}" alt="VinylShortcut" width="140" height="140"><br>
 		<h2>Todos los productos</h2>
-		<p>Duis mollis, est non commodo luctus, nisi erat porttitor
-			ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
-			sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
-			mauris condimentum nibh.</p>
+		<p>Todos nuestros productos a tu disposición. Pregunta si no ves lo que quieres y nosotros lo conseguimos para ti.</p>
 		<p><a class="btn btn-secondary" href="{{ url('/product/buy') }}" role="button">Mostrar »</a></p>
 	</div><!-- /.col-lg-4 -->
 	<div class="col-lg-3">
 		<img class="rounded-circle mx-auto d-block" src="{{URL::asset('/images/vinyl.jpg')}}" alt="VinylShortcut" width="140" height="140"><br>
 		<h2>Vinilos</h2>
-		<p>Duis mollis, est non commodo luctus, nisi erat porttitor
-			ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
-			sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
-			mauris condimentum nibh.</p>
+		<p>Disfruta de tus vinilos favoritos con la máxima calidad sonora en tu equipo de alta fidelidad. </p>
 		<p><a class="btn btn-secondary" href="{{ url('/product/buy/vinyl') }}" role="button">Mostrar »</a></p>
 	</div><!-- /.col-lg-4 -->
 	<div class="col-lg-3">
 		<img class="rounded-circle mx-auto d-block" src="{{URL::asset('/images/cd.jpg')}}" alt="CdShortcut" width="140" height="140"><br>
 		<h2>CD´s</h2>
-		<p>Duis mollis, est non commodo luctus, nisi erat porttitor
-			ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
-			sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
-			mauris condimentum nibh.</p>
+		<p>Consigue los álbumes de tus artistas favoritos al mejor precio y aumenta el volumen de tu colección.</p>
 		<p><a class="btn btn-secondary" href="{{ url('/product/buy/cd') }}" role="button">Mostrar »</a></p>
 	</div><!-- /.col-lg-4 -->
 </div><!-- /.row -->

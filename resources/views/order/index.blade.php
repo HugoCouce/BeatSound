@@ -31,7 +31,7 @@ session_start();
                                 <td>{{ $order->usuario_dni }}</td>
                                 <td>
                                     <div class="btn-group d-flex" role="group">
-                                        <a class="btn btn-link" href="{{ url('/order/'.$order->pedido_id.'/edit') }}" role="button">
+                                        <a class="btn btn-link" href="{{ url('/order/'.$order->pedido_id) }}" role="button">
                                             Mostrar pedido
                                         </a>
                                     </div>

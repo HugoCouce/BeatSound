@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Order_detail;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -50,9 +51,17 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show($id)
     {
-        //
+        $order = Order::findOrFail($id);
+
+        $datos = DB::table('orders')
+            ->join('orders_details', 'orders.pedido_id', '=', 'orders_details.pedido_id')
+            ->select('orders.pedido_id', 'orders.usuario_dni', 'orders_details.nombre_album', 'orders_details.cantidad', 'orders_details.precio_total', 'orders_details.fecha_compra')
+            ->where('orders.pedido_id', '=', $id)
+            ->get();
+
+        return view('order.show', compact('datos'));
     }
 
     /**

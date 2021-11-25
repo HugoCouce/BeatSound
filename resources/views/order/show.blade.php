@@ -17,15 +17,25 @@ session_start();
                     <thead class="thead-light">
                         <tr>
                             <th>Pedido</th>
-                            <th>Usuario</th>                            
+                            <th>Usuario</th>
+                            <th>Nombre álbum</th>
+                            <th>Cantidad</th>
+                            <th>Precio total</th>
+                            <th>Fecha de compra</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        @foreach( $datos as $dato)
                         <tr>
-                            <td>{{ $order->pedido_id }}</td>
-                            <td>{{ $order->usuario_dni }}</td>
+                            <td>{{ $dato->pedido_id }}</td>
+                            <td>{{ $dato->usuario_dni }}</td>
+                            <th>{{ $dato->nombre_album }}</th>
+                            <th>{{ $dato->cantidad }}</th>
+                            <th>{{ $dato->precio_total }}</th>
+                            <th>{{ $dato->fecha_compra }}</th>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

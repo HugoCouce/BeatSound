@@ -84,13 +84,16 @@
                                 {{ __('Gestionar productos') }}
                             </a>
 
-                            <a class="dropdown-item" href="{{ url('/') }}">
+                            <a class="dropdown-item" href="{{ url('/order') }}">
                                 {{ __('Gestionar pedidos') }}
                             </a>
 
                             @else
                             <a class="dropdown-item" href="{{ url('/user/'.Auth::user()->user_dni.'/edit') }}">
                                 {{ __('Editar datos') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ url('/order/'.Auth::user()->user_dni.'/edit') }}">
+                                {{ __('Ver pedidos') }}
                             </a>
                             @endif
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();

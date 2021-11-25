@@ -77,6 +77,7 @@ session_start();
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $product->nombre_album }} - {{ $product->año }}</h6>
                                 <p class="card-text">Género: {{ $product->categoria }}</p>
                                 <p class="card-text">Formato: {{ $product->formato }}</p>
+                                <p class="card-text">Precio: {{ $product->precio_unitario }} €</p>
                                 <div>
                                     <form action="" method="POST">
                                         @csrf
@@ -91,12 +92,14 @@ session_start();
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
-                                        </select>
+                                        </select><br><br>
                                         @guest
                                         @else
-                                        <button class="btn btn-primary" name="btnCarrito" value="Agregar" type="submit">
-                                            Agregar al carrito
-                                        </button>
+                                        <div class="text-center">
+                                            <button class="btn btn-primary" name="btnCarrito" value="Agregar" type="submit">
+                                                Agregar al carrito
+                                            </button>
+                                        </div>
                                         @endguest
                                     </form>
                                 </div>
