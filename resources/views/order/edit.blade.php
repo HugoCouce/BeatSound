@@ -17,14 +17,14 @@ session_start();
                     <thead class="thead-light">
                         <tr>
                             <th>Pedido</th>
-                            <th>Usuario</th>                            
+                            <th>Usuario</th>
                         </tr>
                     </thead>
-
+                    <p>PAGINA DE PRUEBASSSSSSSSSSSSSSSSSSSSSSS</p>
                     <tbody>
                         <tr>
-                            <td>{{ $order->pedido_id }}</td>
-                            <td>{{ $order->usuario_dni }}</td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
