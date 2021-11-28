@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
-use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -38,6 +37,7 @@ Route::resource('user', UserController::class);
 Route::resource('product', ProductController::class)->middleware('auth');
 
 /* Aquí especificamos todas las rutas que tiene el controlador Order. */
+Route::get('order/customer/{nif}', [OrderController::class, 'customerOrders'])->where(['nif' => '[0-9]{8}[A-Z]']);
 Route::resource('order', OrderController::class);
 Route::post('order/create', [OrderController::class, 'create']);
 

@@ -95,7 +95,7 @@
                                     <a class="dropdown-item" href="{{ url('/user/'.Auth::user()->user_dni.'/edit') }}">
                                         {{ __('Editar datos') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ url('/order/'.Auth::user()->user_dni.'/edit') }}">
+                                    <a class="dropdown-item" href="{{ url('/order/customer/'.Auth::user()->user_dni) }}">
                                         {{ __('Ver pedidos') }}
                                     </a>
                                     @endif

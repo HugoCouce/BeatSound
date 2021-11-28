@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
-use App\Models\Order_detail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -62,6 +61,25 @@ class OrderController extends Controller
             ->get();
 
         return view('order.show', compact('datos'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    public function customerOrders($id)
+    {
+
+        $datos = DB::table('orders')
+            ->join('orders_details', 'orders.pedido_id', '=', 'orders_details.pedido_id')
+            ->select('orders.pedido_id', 'orders.usuario_dni', DB::raw('group_concat(orders_details.nombre_album separator ", ") as nombre_album'), db::raw('sum(orders_details.cantidad) as cantidad'), db::raw('sum(orders_details.precio_total) as precio_total'), 'orders_details.fecha_compra')
+            ->where('orders.usuario_dni', '=', $id)
+            ->groupBy('orders.pedido_id', 'orders.usuario_dni', 'orders_details.fecha_compra')
+            ->get();
+
+        return view('order.customers', compact('datos'));
     }
 
     /**
