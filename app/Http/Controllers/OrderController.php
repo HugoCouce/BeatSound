@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Order_detail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,7 @@ class OrderController extends Controller
     public function index()
     {
         $datos['orders'] = Order::paginate(5);
+
         return view('order.index', $datos);
     }
 
@@ -37,11 +39,27 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        /* Insertamos el nuevo pedido */
         $datosOrder = request()->only('usuario_dni');
-        $datosOrderDetails = request()->except('_token', 'usuario_dni');
-
         Order::insert($datosOrder);
-        return redirect('order');
+
+        /* Buscamos el último índice insertado */
+        $id = DB::table('orders')
+            ->select(DB::raw('max(pedido_id) as pedido_id'))
+            ->value('pedido_id');
+
+        /* Insertamos los datos del pedido en la tabla orders_details */
+        $producto_id  = $request->producto_id;
+        $pedido_nombre_album   = $request->pedido_nombre_album;
+        $pedido_cantidad = $request->pedido_cantidad;
+        $pedido_precio_total    = $request->pedido_precio_total;
+        $fecha_compra    = $request->fecha_compra;
+        /* Order_detail::insert('insert into orders_details (pedido_id, producto_id, nombre_album, cantidad, precio_total, fecha_compra) values (?, ?, ?, ?, ?, ?)', [$ultimoId, 15, 'colors', 1, 20, '2021/11/30']); */
+        DB::table('orders_details')->insert([
+            ['pedido_id' => $id, 'producto_id' => $producto_id, 'nombre_album' => $pedido_nombre_album, 'cantidad' => $pedido_cantidad, 'precio_total' => $pedido_precio_total, 'fecha_compra' => $fecha_compra]
+        ]);
+
+        return redirect('order/confirmacionCompra');
     }
 
     /**
@@ -88,11 +106,8 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        $order = Order::findOrFail($id);
-
-        return view('order.edit', compact('order'));
     }
 
     /**

@@ -41,6 +41,8 @@ session_start();
                         </tbody>
                     </table>
                 </div>
+                <!-- Paginación -->
+                {!! $orders->links() !!}
             </div>
         </div>
     </div>

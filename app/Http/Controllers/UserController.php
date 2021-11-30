@@ -122,6 +122,7 @@ class UserController extends Controller
         //Ahora además de eliminar la información del token, lo hacemos también con la del method.
         //Solo necesitamos los datos que contenga nuestra tabla
         $datosUser = request()->except('_token', '_method');
+        $datosUser['password'] = bcrypt($datosUser['password']);
         User::where('user_dni', '=', $user_dni)->update($datosUser);
 
         //Volvemos a la vista de edición

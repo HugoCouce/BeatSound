@@ -38,6 +38,9 @@ Route::resource('product', ProductController::class)->middleware('auth');
 
 /* Aquí especificamos todas las rutas que tiene el controlador Order. */
 Route::get('order/customer/{nif}', [OrderController::class, 'customerOrders'])->where(['nif' => '[0-9]{8}[A-Z]']);
+Route::get('order/confirmacionCompra', function () {
+    return view('order.confirmacionCompra');
+});
 Route::resource('order', OrderController::class);
 Route::post('order/create', [OrderController::class, 'create']);
 

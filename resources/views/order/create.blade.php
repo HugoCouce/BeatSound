@@ -72,7 +72,7 @@ session_start();
                                         <input type="hidden" name="pedido_nombre_album" value="{{ $producto['album'] }}">
                                         <input type="hidden" name="pedido_cantidad" value="{{ $producto['cantidad'] }}">
                                         <input type="hidden" name="pedido_precio_total" value="{{ $producto['precioTotal'] }}">
-                                        <input type="hidden" name="fecha_compra" value="<?php echo (date('d-m-Y H:i:s')); ?>">
+                                        <input type="hidden" name="fecha_compra" value="<?php echo (date('Y-m-d H:i:s')); ?>">
                                         <button class="btn btn-success btn-block" type="submit">
                                             Realizar compra</button>
                                     </form>
