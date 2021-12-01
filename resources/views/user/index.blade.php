@@ -43,19 +43,17 @@ session_start();
                                 <td>{{$user->fecha_nacimiento}}</td>
                                 <td>{{$user->administrador}}</td>
                                 <td>
-                                    <div class="btn-group d-flex" role="group">
-                                        <a class="btn btn-link" href="{{ url('/user/'.$user->user_dni.'/edit') }}" role="button">
-                                            Editar
-                                        </a>
+                                    <a class="btn btn-link d-block" href="{{ url('/user/'.$user->user_dni.'/edit') }}" role="button">
+                                        Editar<br>
+                                    </a>
 
-                                        <form action="{{ url('/user/'.$user->user_dni) }}" method="post">
-                                            <!-- Añadimos el token de seguridad para recepcionar los datos -->
-                                            @csrf
-                                            <!-- Tenemos que cambiar el método post a delete para que se pueda borrar el registro -->
-                                            {{ method_field('DELETE') }}
-                                            <button type="submit" onclick="return confirm('¿Estás seguro de querer borrar el usuario?')" class="btn btn-danger">Borrar</button>
-                                        </form>
-                                    </div>
+                                    <form action="{{ url('/user/'.$user->user_dni) }}" method="post" class="d-flex justify-content-center">
+                                        <!-- Añadimos el token de seguridad para recepcionar los datos -->
+                                        @csrf
+                                        <!-- Tenemos que cambiar el método post a delete para que se pueda borrar el registro -->
+                                        {{ method_field('DELETE') }}
+                                        <button type="submit" onclick="return confirm('¿Estás seguro de querer borrar el usuario?')" class="btn btn-danger d-block">Borrar</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

@@ -7,7 +7,7 @@
 @section('content')
 <header class="masthead"><br><br>
 
-	<div class="">
+	<div id="carousel">
 		<div class="row d-flex align-items-center justify-content-center">
 			<div class="col-lg-9">
 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -76,27 +76,26 @@ session_start();
 
 <hr width="80%"><br><br>
 
+<!-- Sección de enlaces -->
 
-
-<!-- Three columns of text below the carousel -->
 <div class="row d-flex align-items-center justify-content-center">
 	<div class="col-lg-3 ">
 		<img class="rounded mx-auto d-block" src="{{URL::asset('/images/vinyl&cd.png')}}" alt="VinylShortcut" width="140" height="140"><br>
-		<h2>Todos los productos</h2>
+		<h2 class="text-center">Todos los productos</h2>
 		<p>Todos nuestros productos a tu disposición. Pregunta si no ves lo que quieres y nosotros lo conseguimos para ti.</p>
-		<p><a class="btn btn-secondary" href="{{ url('/product/buy') }}" role="button">Mostrar »</a></p>
-	</div><!-- /.col-lg-4 -->
+		<p class="text-center"><a class="btn btn-primary" href="{{ url('/product/buy') }}" role="button">Mostrar »</a></p>
+	</div>
 	<div class="col-lg-3">
 		<img class="rounded-circle mx-auto d-block" src="{{URL::asset('/images/vinyl.jpg')}}" alt="VinylShortcut" width="140" height="140"><br>
-		<h2>Vinilos</h2>
-		<p>Disfruta de tus vinilos favoritos con la máxima calidad sonora en tu equipo de alta fidelidad. </p>
-		<p><a class="btn btn-secondary" href="{{ url('/product/buy/vinyl') }}" role="button">Mostrar »</a></p>
-	</div><!-- /.col-lg-4 -->
+		<h2 class="text-center">Vinilos</h2>
+		<p>Disfruta de todos tus vinilos favoritos con la máxima calidad sonora en tu equipo de alta fidelidad. </p>
+		<p class="text-center"><a class="btn btn-primary" href="{{ url('/product/buy/vinyl') }}" role="button">Mostrar »</a></p>
+	</div>
 	<div class="col-lg-3">
 		<img class="rounded-circle mx-auto d-block" src="{{URL::asset('/images/cd.jpg')}}" alt="CdShortcut" width="140" height="140"><br>
-		<h2>CD´s</h2>
+		<h2 class="text-center">CD´s</h2>
 		<p>Consigue los álbumes de tus artistas favoritos al mejor precio y aumenta el volumen de tu colección.</p>
-		<p><a class="btn btn-secondary" href="{{ url('/product/buy/cd') }}" role="button">Mostrar »</a></p>
-	</div><!-- /.col-lg-4 -->
-</div><!-- /.row -->
+		<p class="text-center"><a class="btn btn-primary" href="{{ url('/product/buy/cd') }}" role="button">Mostrar »</a></p>
+	</div>
+</div>
 @endsection
