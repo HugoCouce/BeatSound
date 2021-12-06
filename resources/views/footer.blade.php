@@ -45,7 +45,7 @@
                     <h6 class="text-uppercase fw-bold mb-4">
                         <p><i class="fas fa-phone"></i> Contacto</p>
                     </h6>
-                    <p><i class="fas fa-home me-3"></i> https://goo.gl/maps/HC8EbKBvbrdDese16</p>
+                    <a href="https://goo.gl/maps/HC8EbKBvbrdDese16"><i class="fas fa-home me-3"></i>https://goo.gl/maps/HC8EbKBvbrdDese16</a>
                     <p>
                         <i class="fas fa-envelope me-3"></i>
                         soporte@beatsound.com
