@@ -20,7 +20,7 @@ window.onload = function() {
             if (re.test(dni) == true) {
                 document.getElementById("errorInputDni").innerHTML = "";
             } else {
-                document.getElementById("errorInputDni").innerHTML = "* El email está mal escrito";
+                document.getElementById("errorInputDni").innerHTML = "* El DNI está mal escrito";
                 document.getElementById("errorInputDni").style.color = "red";
             }
         }
